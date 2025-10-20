@@ -1,7 +1,12 @@
 import TaskItem from './TaskItem.jsx'
 
 export default function TaskList({ tasks, onUpdate, onDelete, overdueIds }) {
-  if (!tasks.length) return <p className="text-gray-500">No tasks yet.</p>
+  if (!tasks.length) return (
+    <div className="card card-hover text-center">
+      <p className="text-gray-600">No tasks yet.</p>
+      <p className="text-sm text-gray-500">Create your first task using the form above.</p>
+    </div>
+  )
   return (
     <div className="grid gap-3">
       {tasks.map((t)=> (

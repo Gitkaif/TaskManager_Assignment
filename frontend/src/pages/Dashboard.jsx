@@ -50,7 +50,7 @@ export default function Dashboard() {
 
   return (
     <div className="space-y-6">
-      <div className="card">
+      <div className="card card-hover">
         <TaskForm onCreate={onCreate} />
       </div>
       <div className="flex items-center justify-between">
@@ -59,7 +59,18 @@ export default function Dashboard() {
       </div>
       {error && <p className="text-red-600">{error}</p>}
       {loading ? (
-        <p>Loading...</p>
+        <div className="grid gap-3">
+          <div className="card">
+            <div className="h-4 w-24 skeleton mb-3"></div>
+            <div className="h-3 w-3/4 skeleton mb-2"></div>
+            <div className="h-3 w-1/2 skeleton"></div>
+          </div>
+          <div className="card">
+            <div className="h-4 w-40 skeleton mb-3"></div>
+            <div className="h-3 w-2/3 skeleton mb-2"></div>
+            <div className="h-3 w-1/3 skeleton"></div>
+          </div>
+        </div>
       ) : (
         <TaskList tasks={tasks} onUpdate={onUpdate} onDelete={onDelete} overdueIds={overdueIds} />
       )}

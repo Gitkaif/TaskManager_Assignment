@@ -24,7 +24,7 @@ export default function Login() {
   }
 
   return (
-    <div className="max-w-md mx-auto mt-10 card">
+    <div className="max-w-md mx-auto mt-10 card card-hover">
       <h1 className="text-xl font-semibold mb-4">Login</h1>
       {error && <p className="text-red-600 mb-2">{error}</p>}
       <form onSubmit={handleSubmit} className="space-y-3">
@@ -32,7 +32,7 @@ export default function Login() {
         <input className="input" placeholder="Password" type="password" value={form.password} onChange={(e)=>setForm({...form, password:e.target.value})} required />
         <button className="btn w-full" disabled={loading}>{loading ? 'Loading...' : 'Login'}</button>
       </form>
-      <p className="text-sm mt-3">No account? <Link className="text-blue-600" to="/signup">Signup</Link></p>
+      <p className="text-sm mt-3">No account? <Link className="text-blue-600 hover:underline" to="/signup">Signup</Link></p>
     </div>
   )
 }

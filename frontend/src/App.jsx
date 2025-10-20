@@ -9,14 +9,14 @@ export default function App() {
   const { user, logout } = useAuth()
   return (
     <div className="min-h-screen">
-      <nav className="bg-white border-b shadow-sm">
+      <nav className="bg-white/80 backdrop-blur border-b shadow-sm sticky top-0 z-40">
         <div className="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
-          <Link to="/" className="font-semibold">Task Manager</Link>
+          <Link to="/" className="font-semibold text-lg">Task Manager</Link>
           <div>
             {user ? (
               <div className="flex items-center gap-3">
                 <span className="text-sm">Hi, {user.name}</span>
-                <button className="btn" onClick={logout}>Logout</button>
+                <button className="btn-secondary" onClick={logout}>Logout</button>
               </div>
             ) : (
               <div className="flex gap-2">
